@@ -51,7 +51,7 @@ def create_text(prompt):
 st.title('AI Summary App')
 
 # Input fields
-nombre_proyecto = st.write('Nombre del proyecto')
+nombre_proyecto = st.text_input('Nombre del proyecto')
 proyecto = st.text_area("Proyecto")
 beneficiadas = st.number_input('Número de personas beneficiadas', value=0, format="%i")
 inversion = st.number_input("Inversión total en el proyecto $")
