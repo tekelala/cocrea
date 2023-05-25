@@ -54,7 +54,7 @@ proyecto = st.text_area("Proyecto")
 beneficiadas = st.number_input('Personas beneficiadas', value=0, format="%i")
 inversion = st.number_input("Inversión")
 
-if st.button('Generar resumen'):
+if st.button('Escribiendo el proyecto'):
     # Create the prompt
     prompt = f'''Role: You are an AI assistant trained in legal expertise and your answers needs to be always in Spanish and just provide the text requested no need of titles or writting what you are doing
 
