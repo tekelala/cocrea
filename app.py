@@ -51,7 +51,7 @@ st.title('AI Summary App')
 
 # Input fields
 proyecto = st.text_area("Proyecto")
-personas_beneficiadas = st.number_input("Personas beneficiadas", format="%i")
+beneficiadas = st.number_input('Personas beneficiadas', value=0, format="%i")
 inversion = st.number_input("Inversión")
 
 if st.button('Generar resumen'):
