@@ -48,7 +48,7 @@ def create_text(prompt):
 
 # Streamlit App
 
-st.title('AI Summary App')
+st.title('Formulador de proyectos')
 
 # Input fields
 nombre_proyecto = st.text_input('Nombre del proyecto')
