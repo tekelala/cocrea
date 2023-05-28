@@ -117,35 +117,35 @@ inversion_proyecto = st.number_input('Inversión del Proyecto', min_value=0.0, f
 if st.button('Formular proyecto'):
     with st.spinner('Formulando...'):
     # Create the prompt
-    prompt = f'''Role: You are an AI assistant trained in the formulation of creative and cultural economy projects using the logical framework methodology. 
-                Your answers needs to be always in Spanish, just provide the text requested no need of titles or writing what you are doing and respond with a json 
-                format and I am going to give you the keys between [].  Please perform the following tasks: 
+        prompt = f'''Role: You are an AI assistant trained in the formulation of creative and cultural economy projects using the logical framework methodology. 
+                    Your answers needs to be always in Spanish, just provide the text requested no need of titles or writing what you are doing and respond with a json 
+                    format and I am going to give you the keys between [].  Please perform the following tasks: 
 
-                Formulate a project according to the following open call {text_convocatoria}, taking as context the following national development plan {text_plandesarrollo}. 
-                The name of the project is {nombre_proyecto}, the purpose is to {objetivo_proyecto}, the success of the project is going to be measured if it achieves 
-                the following metrics {metricas_exito}, the project will create a general benefit and an special benefit in the following communities {beneficiarios_proyectos}, 
-                the project will benefit {numero_beneficiarios} people with a total investment of {inversion_proyecto}.'''
+                    Formulate a project according to the following open call {text_convocatoria}, taking as context the following national development plan {text_plandesarrollo}. 
+                    The name of the project is {nombre_proyecto}, the purpose is to {objetivo_proyecto}, the success of the project is going to be measured if it achieves 
+                    the following metrics {metricas_exito}, the project will create a general benefit and an special benefit in the following communities {beneficiarios_proyectos}, 
+                    the project will benefit {numero_beneficiarios} people with a total investment of {inversion_proyecto}.'''
 
-    # Call the function
-    result = create_text(prompt)
+        # Call the function
+        result = create_text(prompt)
 
-    # Pretty print the result
-    pp = pprint.PrettyPrinter(indent=4)
-    st.write(pp.pformat(result))
+        # Pretty print the result
+        pp = pprint.PrettyPrinter(indent=4)
+        st.write(pp.pformat(result))
 
-    # Write to .docx
-    doc = Document()
-    doc.add_paragraph(pp.pformat(result))
+        # Write to .docx
+        doc = Document()
+        doc.add_paragraph(pp.pformat(result))
 
-    # Save to BytesIO object
-    f = BytesIO()
-    doc.save(f)
-    f.seek(0)
+        # Save to BytesIO object
+        f = BytesIO()
+        doc.save(f)
+        f.seek(0)
 
-    # Add download button
-    st.download_button(
-        label="Descargar",
-        data=f,
-        file_name="result.docx",
-        mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-    )
+        # Add download button
+        st.download_button(
+            label="Descargar",
+            data=f,
+            file_name="result.docx",
+            mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        )
