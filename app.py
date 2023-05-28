@@ -52,10 +52,10 @@ st.title('Formulador de proyectos')
 
  # Step 1
 nombre_proyecto = st.text_input('Nombre del Proyecto')
-contexto_proyecto = st.text_input('Contexto del Proyecto')
-objetivo_proyecto = st.text_input('Objetivo del Proyecto')
-metricas_exito = st.text_input('Metricas de Exito')
-experiencia_titular = st.text_input('Experiencia Titular')
+contexto_proyecto = st.text_area('Contexto del Proyecto')
+objetivo_proyecto = st.area('Objetivo del Proyecto')
+metricas_exito = st.text_area('Metricas de Exito')
+experiencia_titular = st.text_area('Experiencia Titular')
 
 # Step 2
 eje_proyecto_options = [
