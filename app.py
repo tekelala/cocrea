@@ -50,57 +50,51 @@ def create_text(prompt):
 
 st.title('Formulador de proyectos')
 
-# Input fields
-nombre_proyecto = st.text_input('Nombre del proyecto')
-proyecto = st.text_area("Proyecto")
-beneficiadas = st.number_input('Número de personas beneficiadas', value=0, format="%i")
-inversion = st.number_input("Inversión total en el proyecto $")
-
  # Step 1
-    nombre_proyecto = st.text_input('Nombre del Proyecto')
-    contexto_proyecto = st.text_input('Contexto del Proyecto')
-    objetivo_proyecto = st.text_input('Objetivo del Proyecto')
-    metricas_exito = st.text_input('Metricas de Exito')
-    experiencia_titular = st.text_input('Experiencia Titular')
+nombre_proyecto = st.text_input('Nombre del Proyecto')
+contexto_proyecto = st.text_input('Contexto del Proyecto')
+objetivo_proyecto = st.text_input('Objetivo del Proyecto')
+metricas_exito = st.text_input('Metricas de Exito')
+experiencia_titular = st.text_input('Experiencia Titular')
 
-    # Step 2
-    eje_proyecto_options = [
-        "Eje 1 Cultura de Paz: Participación ciudadana y construcción de la paz en territorios de posconflicto",
-        "Eje 1 Cultura de Paz: Memoria y legado de la verdad en el país",
-        "Eje 2 Culturas, artes para la vida: Formación, educación y aprendizaje para la construcción de ciudadanías libres y sensibles",
-        "Eje 2 Culturas, artes para la vida: Espacios culturales para la vida",
-        "Eje 2 Culturas, artes para la vida: Ecosistemas vivos de las culturas, las artes y los saberes",
-        "Eje 3 Memoria viva y saberes: Gestión integral y territorial de los patrimonios para la vida y la paz",
-        "Eje 3 Memoria viva y saberes: Memorias, saberes y oficios hacia una construcción diversa de nación",
-        "Eje 4 Colombia en el mundo: las culturas, las artes y los saberes para la reconciliación del ser humano con el planeta",
-        "Eje 4 Colombia en el mundo: Diálogo intercultural con el mundo",
-        "Eje 5 Colombia sociedad de conocimiento: Propiedad intelectual para la riqueza social",
-        "Eje 5 Colombia sociedad de conocimiento: Creatividad al servicio del ser humano",
-        "Eje 6: Ciudadanos del Río"
-    ]
-    eje_proyecto = st.selectbox('Eje del Proyecto', eje_proyecto_options)
+# Step 2
+eje_proyecto_options = [
+    "Eje 1 Cultura de Paz: Participación ciudadana y construcción de la paz en territorios de posconflicto",
+    "Eje 1 Cultura de Paz: Memoria y legado de la verdad en el país",
+    "Eje 2 Culturas, artes para la vida: Formación, educación y aprendizaje para la construcción de ciudadanías libres y sensibles",
+    "Eje 2 Culturas, artes para la vida: Espacios culturales para la vida",
+    "Eje 2 Culturas, artes para la vida: Ecosistemas vivos de las culturas, las artes y los saberes",
+    "Eje 3 Memoria viva y saberes: Gestión integral y territorial de los patrimonios para la vida y la paz",
+    "Eje 3 Memoria viva y saberes: Memorias, saberes y oficios hacia una construcción diversa de nación",
+    "Eje 4 Colombia en el mundo: las culturas, las artes y los saberes para la reconciliación del ser humano con el planeta",
+    "Eje 4 Colombia en el mundo: Diálogo intercultural con el mundo",
+    "Eje 5 Colombia sociedad de conocimiento: Propiedad intelectual para la riqueza social",
+    "Eje 5 Colombia sociedad de conocimiento: Creatividad al servicio del ser humano",
+    "Eje 6: Ciudadanos del Río"
+]
+eje_proyecto = st.selectbox('Eje del Proyecto', eje_proyecto_options)
 
-    # Step 3
-    beneficiarios_proyectos_options = [
-        "Mujeres",
-        "Sectores LGBTIQ+",
-        "Víctimas",
-        "Niñas, niños y adolescentes",
-        "Pueblos y comunidades étnicas",
-        "Jóvenes (población entre los 14 y 28 años)",
-        "Personas con discapacidad",
-        "Personas mayores",
-        "Migrantes",
-        "Campesinos",
-        "Personas que viven en la pobreza"
-    ]
-    beneficiarios_proyectos = st.multiselect('Beneficiarios del Proyecto', beneficiarios_proyectos_options)
+# Step 3
+beneficiarios_proyectos_options = [
+    "Mujeres",
+    "Sectores LGBTIQ+",
+    "Víctimas",
+    "Niñas, niños y adolescentes",
+    "Pueblos y comunidades étnicas",
+    "Jóvenes (población entre los 14 y 28 años)",
+    "Personas con discapacidad",
+    "Personas mayores",
+    "Migrantes",
+    "Campesinos",
+    "Personas que viven en la pobreza"
+]
+beneficiarios_proyectos = st.multiselect('Beneficiarios del Proyecto', beneficiarios_proyectos_options)
 
-    # Step 4
-    numero_beneficiarios = st.number_input('Número de Beneficiarios', min_value=1, format="%i")
+# Step 4
+numero_beneficiarios = st.number_input('Número de Beneficiarios', min_value=1, format="%i")
 
-    # Step 5
-    inversion_proyecto = st.number_input('Inversión del Proyecto', min_value=0.0, format="%f")
+# Step 5
+inversion_proyecto = st.number_input('Inversión del Proyecto', min_value=0.0, format="%f")
 
 if st.button('Escribiendo el proyecto'):
     # Create the prompt
