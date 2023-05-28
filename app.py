@@ -5,6 +5,24 @@ import pprint
 from docx import Document
 from io import BytesIO
 
+# Function to read the jsons
+def read_json(json_file_name):
+    # Open the JSON file
+    with open(json_file_name, 'r') as file:
+        # Load the data from the file
+        data = json.load(file)
+        
+    # Extract values from the JSON data
+    # The keys used here are placeholders, replace them with the actual keys from your JSON data
+    text_json = data.get('text', '')
+    
+    return text_json
+
+# Loading the jsons
+text_convocatoria = read_json('convocatoria.json')
+text_derechosculturales = read_json('derechosculturales.json')
+text_plandesarrollo = read_json('plandesarrollo.json')
+
 # Define send message function
 def create_text(prompt):
     api_url = "https://api.anthropic.com/v1/complete"
@@ -96,7 +114,7 @@ numero_beneficiarios = st.number_input('Número de Beneficiarios', min_value=1, 
 # Step 5
 inversion_proyecto = st.number_input('Inversión del Proyecto', min_value=0.0, format="%f")
 
-if st.button('Escribiendo el proyecto'):
+if st.button('Formularproyecto'):
     # Create the prompt
     prompt = f'''Role: You are an AI assistant trained in legal expertise and your answers needs to be always in Spanish and just provide the text requested no need of titles or writting what you are doing
 
