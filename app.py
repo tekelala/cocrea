@@ -114,7 +114,7 @@ numero_beneficiarios = st.number_input('Número de Beneficiarios', min_value=1, 
 # Step 5
 inversion_proyecto = st.number_input('Inversión del Proyecto', min_value=0.0, format="%f")
 
-if st.button('Formularproyecto'):
+if st.button('Formular proyecto'):
     # Create the prompt
     prompt = f'''Role: You are an AI assistant trained in legal expertise and your answers needs to be always in Spanish and just provide the text requested no need of titles or writting what you are doing
 
