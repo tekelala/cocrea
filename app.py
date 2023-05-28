@@ -19,9 +19,9 @@ def read_json(json_file_name):
     return text_json
 
 # Loading the jsons
-text_convocatoria = read_json('convocatoria.json')
-text_derechosculturales = read_json('derechosculturales.json')
-text_plandesarrollo = read_json('plandesarrollo.json')
+text_convocatoria = read_json('jsons/convocatoria.json')
+text_derechosculturales = read_json('jsons/derechosculturales.json')
+text_plandesarrollo = read_json('jsons/plandesarrollo.json')
 
 # Define send message function
 def create_text(prompt):
