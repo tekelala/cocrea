@@ -122,7 +122,7 @@ if st.button('Formular proyecto'):
                     Task 3: Analize the goals of the project that are {metricas_exito}
                     
                     Task 4: Write the logical framework matrix as a document for the project called {nombre_proyecto} that will benefit the population of {beneficiarios_proyectos}. 
-                    Please surround each component of the matrix with <raw-content> tags.'''
+                    '''
 
                     
                     
