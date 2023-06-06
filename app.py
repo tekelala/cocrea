@@ -112,7 +112,8 @@ inversion_proyecto = st.number_input('Inversión del Proyecto', min_value=0.0, f
 if st.button('Formular proyecto'):
     with st.spinner('Formulando...'):
     # Create the prompt
-        prompt = f'''Role: You are an AI assistant trained in the formulation of creative and cultural economy projects using the logical framework methodology. Do the following taks:
+        prompt_ml = f'''Role: You are an AI assistant trained in the formulation of creative and cultural economy projects using the logical framework methodology. 
+                    Your answers should always be in Spanish. Do the following taks:
                     
                     Task 1: Read the following documents {text_convocatoria} and {contexto_proyecto} to understand the context of the project.
                     
@@ -120,7 +121,8 @@ if st.button('Formular proyecto'):
 
                     Task 3: Analize the goals of the project that are {metricas_exito}
                     
-                    Task 4: Write the logical framework matrix for the project called {nombre_proyecto} that will benefit the population of {beneficiarios_proyectos}, '''
+                    Task 4: Write the logical framework matrix as a document for the project called {nombre_proyecto} that will benefit the population of {beneficiarios_proyectos}. 
+                    Please surround each component of the matrix with <raw-content> tags.'''
 
                     
                     
@@ -130,9 +132,9 @@ if st.button('Formular proyecto'):
                     
 
         # Call the function
-        result = create_text(prompt)
+        marco_logico = create_text(prompt_ml)
 
         # Print the result
-        st.write(result)
+        st.write(marco_logico)
 
        
