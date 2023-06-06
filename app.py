@@ -129,15 +129,15 @@ if st.button('Formular proyecto'):
     with st.spinner('Formulando...'):
     # Create the prompt
         for task in tasks:
-        # Add the task to the prompt
-        prompt = f"Human: {task}\n\nAssistant:"
-        body['prompt'] = prompt
+            # Add the task to the prompt
+            prompt = f"Human: {task}\n\nAssistant:"
+            body['prompt'] = prompt
 
-        # Call the function
-        result = create_text(prompt)
+            # Call the function
+            result = create_text(prompt)
 
-        # Add the result to the results list
-        results.append(result)
+            # Add the result to the results list
+            results.append(result)
 
 # Print the results
 for result in results:
