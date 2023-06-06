@@ -140,7 +140,7 @@ if st.button('Formular proyecto'):
                     Task 12: Estimate how many people will be employed in the project taking into account the budget and objectives. 
                     And create a table with 2 columns: Column 1 Number of People, Column 2 Profile of the person
                     Task 13: Write a description of the beneficiaries of the project
-                    
+                    \n\nHuman:
                     '''               
                     
 
