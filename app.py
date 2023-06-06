@@ -134,8 +134,8 @@ if st.button('Formular proyecto'):
         result = create_text(prompt)
 
         # Pretty print the result
-        pp = pprint.PrettyPrinter(indent=4)
-        st.write(pp.pformat(result))
+        #pp = pprint.PrettyPrinter(indent=4)
+        st.write(result)
 
         # Write to .docx
         doc = Document()
