@@ -118,9 +118,10 @@ inversion_proyecto = st.number_input('Inversión del Proyecto', min_value=0.0, f
 if st.button('Formular proyecto'):
     with st.spinner('Formulando...'):
     # Create the prompt
-        prompt = f'''Role: You are an AI assistant trained in the formulation of creative and cultural economy projects using the logical framework methodology. Do the following tasks:
-                Task1: Read the following document {text_plandesarrollo} and write a 500 words summary.  
-                Task2: Extract the parts related with culture'''
+        prompt = f'''Role: You are an AI assistant trained in the formulation of creative and cultural economy projects using the logical framework methodology. 
+                    You are going to receive a task between 3 pound signs. Respond to each task using the 3 pound signs again:
+                    ###Task 1: Read the following document {text_plandesarrollo} and write a 500 words summary###
+                    ###Task 2: Extract and write from the previous document the parts related with culture###'''
 
         
                     
