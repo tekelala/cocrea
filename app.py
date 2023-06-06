@@ -113,7 +113,11 @@ if st.button('Formular proyecto'):
     with st.spinner('Formulando...'):
     # Create the prompt
         prompt_ml = f'''Role: You are an AI assistant trained in the formulation of creative and cultural economy projects using the logical framework methodology. 
-                    Your answers should always be in Spanish. Do the following taks:
+                    Your answers should always be in Spanish. Always write the number of the task before you answer. 
+                    For example: 
+                    Task 7: ...
+                    Task 8: ...
+                    Do the following taks:
                     
                     Task 1: Read the following documents {text_convocatoria} and {contexto_proyecto} to understand the context of the project. 
                     Do not write anything after performing this task. 
