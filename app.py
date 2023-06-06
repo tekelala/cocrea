@@ -135,6 +135,9 @@ if st.button('Formular proyecto'):
 
                     Task 7: Write the detailed logical framework matrix as a plain text document for the project 
                     called {nombre_proyecto} that will benefit the population of {beneficiarios_proyectos}. 
+
+                    Task 8: Read {text_derechosculturales} choose one of the rights according to the task 7. 
+                    Write the right you choose and the explanation of how the project is related with this right and how it have a positive benefit.
                     '''               
                     
 
