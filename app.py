@@ -5,23 +5,16 @@ import pprint
 from docx import Document
 from io import BytesIO
 
-# Function to read the jsons
-def read_json(json_file_name):
-    # Open the JSON file
-    with open(json_file_name, 'r') as file:
-        # Load the data from the file
-        data = json.load(file)
-        
-    # Extract values from the JSON data
-    # The keys used here are placeholders, replace them with the actual keys from your JSON data
-    text_json = data.get('text', '')
-    
-    return text_json
 
-# Loading the jsons
-text_convocatoria = read_json('jsons/convocatoria.json')
-text_derechosculturales = read_json('jsons/derechosculturales.json')
-text_plandesarrollo = read_json('jsons/plandesarrollo.json')
+# Function to read .txt file
+def read_txt_file(file_path):
+    with open(file_path, 'r') as file:
+        return file.read()
+
+# Loading the .txt files
+text_convocatoria = read_txt_file('txts/convocatoria_cocrea.txt')
+text_derechosculturales = read_txt_file('txts/derechosculturales.txt')
+text_plandesarrollo = read_txt_file('txts/plandesarrollo.txt')
 
 # Define send message function
 def create_text(prompt):
@@ -119,10 +112,9 @@ if st.button('Formular proyecto'):
     with st.spinner('Formulando...'):
     # Create the prompt
         prompt = f'''Role: You are an AI assistant trained in the formulation of creative and cultural economy projects using the logical framework methodology. 
-                    Please follow these steps:
-                    1. Write a 500 summary of the following text {text_plandesarrollo}. Please surround this text in <raw-content> tags.'''
+                    Using the following text as context {text_convocatoria} write the logical framework matrix for a project to create a new In Flames live video'''
 
-                    #2. Extract from the text the main points related with culture. Please surround this version of the content with <tagged-content> tags.
+                    
                     
 
         
