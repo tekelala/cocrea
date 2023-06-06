@@ -124,8 +124,10 @@ if st.button('Formular proyecto'):
         prompt = f'''Role: You are an AI assistant trained in the formulation of creative and cultural economy projects using the logical framework methodology. 
                     Your answers needs to be always in Spanish, just provide the text requested no need of titles or writing what you are doing and respond with a json 
                     format. Answer each task with the number of the task between tags.
-                    Task1: Read the following documents-> {text_convocatoria} {text_derechosculturales} and {text_plandesarrollo}
-                    Task 2: write a 100 words resume of each document'''
+                    Task1: Read the following document {text_convocatoria} and write a 100 words summary
+                    Task2: Read the following document {text_derechosculturales} and write a 100 words summary
+                    Task3: Read the following document {text_plandesarrollo} and write a 100 words summary
+                    Task4: Write the logical framework matrix of a project to create a new Dark Tranquility Album based in the task1, task3 and task3'''
 
                     
                     
@@ -134,23 +136,7 @@ if st.button('Formular proyecto'):
         # Call the function
         result = create_text(prompt)
 
-        # Pretty print the result
-        #pp = pprint.PrettyPrinter(indent=4)
+        # Print the result
         st.write(result)
 
-        # Write to .docx
-        doc = Document()
-        doc.add_paragraph(pp.pformat(result))
-
-        # Save to BytesIO object
-        f = BytesIO()
-        doc.save(f)
-        f.seek(0)
-
-        # Add download button
-        st.download_button(
-            label="Descargar",
-            data=f,
-            file_name="result.docx",
-            mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-        )
+       
