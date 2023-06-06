@@ -31,6 +31,7 @@ def create_text(prompt):
     body = {
         "prompt": conversation,
         "model": "claude-v1.3-100k",
+        "max_tokens_to_sample": 1000000,
         "temperature": 0.6,
         "stop_sequences": ["\n\nHuman:"]
     }
