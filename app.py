@@ -70,6 +70,7 @@ st.title('Formulador de proyectos')
 
  # Step 1
 nombre_proyecto = st.text_input('Nombre del Proyecto')
+nombre_titular_proyecto = st.text_input('Nombre del Titular del proyecto')
 contexto_proyecto = st.text_area('Contexto del Proyecto')
 objetivo_proyecto = st.text_area('Objetivo del Proyecto')
 metricas_exito = st.text_area('Metricas de Exito')
@@ -119,12 +120,12 @@ if st.button('Formular proyecto'):
     # Create the prompt
         prompt = f'''Role: You are an AI assistant trained in the formulation of creative and cultural economy projects using the logical framework methodology. 
                     Your answers needs to be always in Spanish, just provide the text requested no need of titles or writing what you are doing and respond with a json 
-                    format and I am going to give you the keys between [].  Please perform the following tasks: 
-
-                    Write a project according to the following open call {text_convocatoria}, taking as context the following national development plan {text_plandesarrollo}. 
-                    The name of the project is {nombre_proyecto}, the purpose is to {objetivo_proyecto}, the success of the project is going to be measured if it achieves 
-                    the following metrics {metricas_exito}, the project will create a general benefit and an special benefit in the following communities {beneficiarios_proyectos}, 
-                    the project will benefit {numero_beneficiarios} people with a total investment of {inversion_proyecto} in Colombian Pesos.'''
+                    format. The keys are going to be between the following tags: <>. Please perform the following tasks: 
+                    <Task1:> Based in {experiencia_titular} write a text of less than 1000 characters with the experience of {nombre_titular_proyecto} developing cultural and creative projects
+                    <Task2:> In less than 15000 characters write a description of the project with the following name {nombre_proyecto}
+                            the goal of the project is {metricas_exito},the objective of the project is {objetivo_proyecto}. The project needs to be related with the following open call {text_convocatoria}, 
+                            taking as context the following national development plan {text_plandesarrollo}. The project will create a general benefit and an special benefit in the following communities {beneficiarios_proyectos}, 
+                            the project will benefit {numero_beneficiarios} people with a total investment of {inversion_proyecto} in Colombian Pesos.'''
 
         # Call the function
         result = create_text(prompt)
