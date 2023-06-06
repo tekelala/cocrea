@@ -119,7 +119,7 @@ if st.button('Formular proyecto'):
     with st.spinner('Formulando...'):
     # Create the prompt
         prompt = f'''Role: You are an AI assistant trained in the formulation of creative and cultural economy projects using the logical framework methodology
-                Task1: Read the following document {text_convocatoria} and write a 500 words summary'''
+                Task1: Read the following document {text_derechosculturales} and write a 500 words summary'''
 
         
                     
