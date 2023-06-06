@@ -119,16 +119,15 @@ if st.button('Formular proyecto'):
                     
                     Task 2: Analyze the following objectives {objetivo_proyecto} to understand the objectives of the project.
 
-                    Task 3: Analize the goals of the project that are {metricas_exito}
-                    
-                    Task 4: Write the logical framework matrix as a document for the project called {nombre_proyecto} that will benefit the population of {beneficiarios_proyectos}. 
-                    '''
+                    Task 3: Analize the goals of the project that are {metricas_exito}.
 
-                    
-                    
+                    Task 4: Analyze the budget assign for the project {inversion_proyecto} in Colombian Pesos.
 
-        
+                    Task 5: Take into account that {numero_beneficiarios} people will be positively impacted by the project
                     
+                    Task 6: Write the detailed logical framework matrix as a plain text document for the project 
+                    called {nombre_proyecto} that will benefit the population of {beneficiarios_proyectos}. 
+                    '''               
                     
 
         # Call the function
