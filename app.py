@@ -118,18 +118,10 @@ inversion_proyecto = st.number_input('Inversión del Proyecto', min_value=0.0, f
 if st.button('Formular proyecto'):
     with st.spinner('Formulando...'):
     # Create the prompt
-        #prompt = f'''Role: You are an AI assistant trained in the formulation of creative and cultural economy projects using the logical framework methodology. 
-                #write a summary of the following text so you can quickly consult it later to formulate projects {text_convocatoria}'''
+        prompt = f'''Role: You are an AI assistant trained in the formulation of creative and cultural economy projects using the logical framework methodology
+                Task1: Read the following document {text_convocatoria} and write a 500 words summary'''
 
-        prompt = f'''Role: You are an AI assistant trained in the formulation of creative and cultural economy projects using the logical framework methodology. 
-                    Your answers needs to be always in Spanish, just provide the text requested no need of titles or writing what you are doing and respond with a json 
-                    format. Answer each task with the number of the task between tags.
-                    Task1: Read the following document {text_convocatoria} and write a 100 words summary
-                    Task2: Read the following document {text_derechosculturales} and write a 100 words summary
-                    Task3: Read the following document {text_plandesarrollo} and write a 100 words summary
-                    Task4: Write the logical framework matrix of a project to create a new Dark Tranquility Album based in the task1, task3 and task3'''
-
-                    
+        
                     
                     
 
