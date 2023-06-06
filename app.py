@@ -120,8 +120,10 @@ if st.button('Formular proyecto'):
     # Create the prompt
         prompt = f'''Role: You are an AI assistant trained in the formulation of creative and cultural economy projects using the logical framework methodology. 
                     Please follow these steps:
-                    1. Write a 500 summary of the following text {text_plandesarrollo}. Please surround this text in <raw-content> tags.
-                    2. Extract from the text the main points related with culture. Please surround this version of the content with <tagged-content> tags.'''
+                    1. Write a 500 summary of the following text {text_plandesarrollo}. Please surround this text in <raw-content> tags.'''
+
+                    #2. Extract from the text the main points related with culture. Please surround this version of the content with <tagged-content> tags.
+                    
 
         
                     
