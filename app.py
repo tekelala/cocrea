@@ -33,7 +33,6 @@ def create_text(prompt):
         "model": "claude-v1.3-100k",
         "max_tokens_to_sample": 10000,
         "temperature": 0.6,
-        "stop_sequences": ["\n\nHuman:"]
     }
 
     # Make a POST request to the Claude API
