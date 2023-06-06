@@ -115,17 +115,25 @@ if st.button('Formular proyecto'):
         prompt_ml = f'''Role: You are an AI assistant trained in the formulation of creative and cultural economy projects using the logical framework methodology. 
                     Your answers should always be in Spanish. Do the following taks:
                     
-                    Task 1: Read the following documents {text_convocatoria} and {contexto_proyecto} to understand the context of the project.
+                    Task 1: Read the following documents {text_convocatoria} and {contexto_proyecto} to understand the context of the project. 
+                    Do not write anything after performing this task. 
                     
                     Task 2: Analyze the following objectives {objetivo_proyecto} to understand the objectives of the project.
+                    Do not write anything after performing this task.
 
                     Task 3: Analize the goals of the project that are {metricas_exito}.
+                    Do not write anything after performing this task.
 
                     Task 4: Analyze the budget assign for the project {inversion_proyecto} in Colombian Pesos.
+                    Do not write anything after performing this task.
 
-                    Task 5: Take into account that {numero_beneficiarios} people will be positively impacted by the project
-                    
-                    Task 6: Write the detailed logical framework matrix as a plain text document for the project 
+                    Task 5: Take into account that {numero_beneficiarios} people will be positively impacted by the project.
+                    Do not write anything after performing this task.
+
+                    Task 6: The project is aligned with the following axis of the call {eje_proyecto}.
+                    Do not write anything after performing this task.
+
+                    Task 7: Write the detailed logical framework matrix as a plain text document for the project 
                     called {nombre_proyecto} that will benefit the population of {beneficiarios_proyectos}. 
                     '''               
                     
