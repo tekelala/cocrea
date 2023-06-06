@@ -119,13 +119,16 @@ if st.button('Formular proyecto'):
     with st.spinner('Formulando...'):
     # Create the prompt
         prompt = f'''Role: You are an AI assistant trained in the formulation of creative and cultural economy projects using the logical framework methodology. 
-                    Your answers needs to be always in Spanish, just provide the text requested no need of titles or writing what you are doing and respond with a json 
-                    format. The keys are going to be between the following tags: <>. Please perform the following tasks: 
-                    <Task1:> Based in {experiencia_titular} write a text of less than 1000 characters with the experience of {nombre_titular_proyecto} developing cultural and creative projects
-                    <Task2:> In less than 15000 characters write a description of the project with the following name {nombre_proyecto}
-                            the goal of the project is {metricas_exito},the objective of the project is {objetivo_proyecto}. The project needs to be related with the following open call {text_convocatoria}, 
-                            taking as context the following national development plan {text_plandesarrollo}. The project will create a general benefit and an special benefit in the following communities {beneficiarios_proyectos}, 
-                            the project will benefit {numero_beneficiarios} people with a total investment of {inversion_proyecto} in Colombian Pesos.'''
+                write a summary of the following text so you can quickly consult it later to formulate projects {text_convocatoria}'''
+
+        #prompt = f'''Role: You are an AI assistant trained in the formulation of creative and cultural economy projects using the logical framework methodology. 
+                    #Your answers needs to be always in Spanish, just provide the text requested no need of titles or writing what you are doing and respond with a json 
+                    #format. The keys are going to be between the following tags: <>. Please perform the following tasks: 
+                    #<Task1:> Based in {experiencia_titular} write a text of less than 1000 characters with the experience of {nombre_titular_proyecto} developing cultural and creative projects
+                    #<Task2:> In less than 15000 characters write a description of the project with the following name {nombre_proyecto}
+                            #the goal of the project is {metricas_exito},the objective of the project is {objetivo_proyecto}. The project needs to be related with the following open call {text_convocatoria}, 
+                            #taking as context the following national development plan {text_plandesarrollo}. The project will create a general benefit and an special benefit in the following communities {beneficiarios_proyectos}, 
+                            #the project will benefit {numero_beneficiarios} people with a total investment of {inversion_proyecto} in Colombian Pesos.'''
 
         # Call the function
         result = create_text(prompt)
