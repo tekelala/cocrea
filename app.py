@@ -136,9 +136,8 @@ if st.button('Formular proyecto'):
                     Write the right you choose and the explanation of how the project is related with this right and how it have a positive benefit.
                     Task 9: write a paragraph describing the antecedents and justification of the project
                     Task 10: Write a list of the cross functional activities of the project
-                    Task 11: Write a detailed description of the project and its impact in less than 2000 characters
-                    Task 12: Estimate how many people will be employed in the project taking into account the budget and objectives. 
-                    And create a table with 2 columns: Column 1 Number of People, Column 2 Profile of the person
+                    Task 11: Write a detailed description of the project and its impact in less than 2000 characters.
+                    Task 12: Estimate how many people will be employed in the project taking into account the budget and objectives. And create a table with 2 columns: Column 1 Number of People, Column 2 Profile of the person
                     Task 13: Write a description of the beneficiaries of the project
                     \n\nHuman:
                     '''               
