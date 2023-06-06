@@ -119,9 +119,9 @@ if st.button('Formular proyecto'):
     with st.spinner('Formulando...'):
     # Create the prompt
         prompt = f'''Role: You are an AI assistant trained in the formulation of creative and cultural economy projects using the logical framework methodology. 
-                    You are going to receive a task between 3 pound signs. Respond to each task using the 3 pound signs again:
-                    ###Task 1: Read the following document {text_plandesarrollo} and write a 500 words summary###
-                    ###Task 2: Extract and write from the previous document the parts related with culture###'''
+                    Please follow these steps:
+                    1. Write a 500 summary of the following text {text_plandesarrollo}. Please surround this text in <raw-content> tags.
+                    2. Extract from the text the main points related with culture. Please surround this version of the content with <tagged-content> tags.            
 
         
                     
