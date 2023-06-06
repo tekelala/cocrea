@@ -118,40 +118,27 @@ if st.button('Formular proyecto'):
                     Task 7: ...
                     Task 8: ...
                     Do the following taks:
-                    
                     Task 1: Read the following documents {text_convocatoria} and {contexto_proyecto} to understand the context of the project. 
                     Do not write anything after performing this task. 
-                    
                     Task 2: Analyze the following objectives {objetivo_proyecto} to understand the objectives of the project.
                     Do not write anything after performing this task.
-
                     Task 3: Analize the goals of the project that are {metricas_exito}.
                     Do not write anything after performing this task.
-
                     Task 4: Analyze the budget assign for the project {inversion_proyecto} in Colombian Pesos.
                     Do not write anything after performing this task.
-
                     Task 5: Take into account that {numero_beneficiarios} people will be positively impacted by the project.
                     Do not write anything after performing this task.
-
                     Task 6: The project is aligned with the following axis of the call {eje_proyecto}.
                     Do not write anything after performing this task.
-
                     Task 7: Write the detailed logical framework matrix as a plain text document for the project 
                     called {nombre_proyecto} that will benefit the population of {beneficiarios_proyectos}. 
-
                     Task 8: Read {text_derechosculturales} choose one of the rights according to the task 7. 
                     Write the right you choose and the explanation of how the project is related with this right and how it have a positive benefit.
-                    
                     Task 9: write a paragraph describing the antecedents and justification of the project
-
                     Task 10: Write a list of the cross functional activities of the project
-
                     Task 11: Write a detailed description of the project and its impact in less than 2000 characters
-
                     Task 12: Estimate how many people will be employed in the project taking into account the budget and objectives. 
                     And create a table with 2 columns: Column 1 Number of People, Column 2 Profile of the person
-
                     Task 13: Write a description of the beneficiaries of the project
                     
                     '''               
