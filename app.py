@@ -108,44 +108,38 @@ numero_beneficiarios = st.number_input('Número de Beneficiarios', min_value=1, 
 # Step 5
 inversion_proyecto = st.number_input('Inversión del Proyecto', min_value=0.0, format="%f")
 
+tasks = [
+    'Task 1: Read the following documents {text_convocatoria} and {contexto_proyecto} to understand the context of the project.',
+    'Task 2: Analyze the following objectives {objetivo_proyecto} to understand the objectives of the project.',
+    'Task 3: Analize the goals of the project that are {metricas_exito}.',
+    'Task 4: Analyze the budget assign for the project {inversion_proyecto} in Colombian Pesos.',
+    'Task 5: Take into account that {numero_beneficiarios} people will be positively impacted by the project.',
+    'Task 6: The project is aligned with the following axis of the call {eje_proyecto}.',
+    'Task 7: Write the detailed logical framework matrix as a plain text document for the project',
+    'Task 8: Read {text_derechosculturales} choose one of the rights according to the task 7. Write the right you choose and the explanation of how the project is related with this right and how it have a positive benefit.',
+    'Task 9: write a paragraph describing the antecedents and justification of the project',
+    'Task 10: Write a list of the cross functional activities of the project',
+    'Task 11: Write a detailed description of the project and its impact in less than 2000 characters.',
+    'Task 13: Write a description of the beneficiaries of the project'
+]
+
+results = []
+
 if st.button('Formular proyecto'):
     with st.spinner('Formulando...'):
     # Create the prompt
-        prompt_ml = f'''Role: You are an AI assistant trained in the formulation of creative and cultural economy projects using the logical framework methodology. 
-                    Your answers should always be in Spanish. Always write the number of the task before you answer. 
-                    For example: 
-                    Task 7: ...
-                    Task 8: ...
-                    Do the following taks:
-                    Task 1: Read the following documents {text_convocatoria} and {contexto_proyecto} to understand the context of the project. 
-                    Do not write anything after performing this task. 
-                    Task 2: Analyze the following objectives {objetivo_proyecto} to understand the objectives of the project.
-                    Do not write anything after performing this task.
-                    Task 3: Analize the goals of the project that are {metricas_exito}.
-                    Do not write anything after performing this task.
-                    Task 4: Analyze the budget assign for the project {inversion_proyecto} in Colombian Pesos.
-                    Do not write anything after performing this task.
-                    Task 5: Take into account that {numero_beneficiarios} people will be positively impacted by the project.
-                    Do not write anything after performing this task.
-                    Task 6: The project is aligned with the following axis of the call {eje_proyecto}.
-                    Do not write anything after performing this task.
-                    Task 7: Write the detailed logical framework matrix as a plain text document for the project 
-                    called {nombre_proyecto} that will benefit the population of {beneficiarios_proyectos}. 
-                    Task 8: Read {text_derechosculturales} choose one of the rights according to the task 7. 
-                    Write the right you choose and the explanation of how the project is related with this right and how it have a positive benefit.
-                    Task 9: write a paragraph describing the antecedents and justification of the project
-                    Task 10: Write a list of the cross functional activities of the project
-                    Task 11: Write a detailed description of the project and its impact in less than 2000 characters.
-                    Task 12: Estimate how many people will be employed in the project taking into account the budget and objectives. And create a table with 2 columns: Column 1 Number of People, Column 2 Profile of the person
-                    Task 13: Write a description of the beneficiaries of the project
-                    \n\nHuman:
-                    '''               
-                    
+        for task in tasks:
+        # Add the task to the prompt
+        prompt = f"Human: {task}\n\nAssistant:"
+        body['prompt'] = prompt
 
         # Call the function
-        marco_logico = create_text(prompt_ml)
+        result = create_text(prompt)
 
-        # Print the result
-        st.write(marco_logico)
+        # Add the result to the results list
+        results.append(result)
 
+# Print the results
+for result in results:
+    st.write(result)
        
