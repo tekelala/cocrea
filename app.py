@@ -88,6 +88,7 @@ eje_proyecto = st.selectbox('Eje del Proyecto', eje_proyecto_options)
 
 # Step 3
 beneficiarios_proyectos_options = [
+    "General",
     "Mujeres",
     "Sectores LGBTIQ+",
     "Víctimas",
@@ -111,8 +112,15 @@ inversion_proyecto = st.number_input('Inversión del Proyecto', min_value=0.0, f
 if st.button('Formular proyecto'):
     with st.spinner('Formulando...'):
     # Create the prompt
-        prompt = f'''Role: You are an AI assistant trained in the formulation of creative and cultural economy projects using the logical framework methodology. 
-                    Using the following text as context {text_convocatoria} write the logical framework matrix for a project to create a new In Flames live video'''
+        prompt = f'''Role: You are an AI assistant trained in the formulation of creative and cultural economy projects using the logical framework methodology. Do the following taks:
+                    
+                    Task 1: Read the following documents {text_convocatoria} and {contexto_proyecto} to understand the context of the project.
+                    
+                    Task 2: Analyze the following objectives {objetivo_proyecto} to understand the objectives of the project.
+
+                    Task 3: Analize the goals of the project that are {metricas_exito}
+                    
+                    Task 4: Write the logical framework matrix for the project called {nombre_proyecto} that will benefit the population of {beneficiarios_proyectos}, '''
 
                     
                     
