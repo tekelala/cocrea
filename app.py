@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 import json
-import pprint
+import re
 from docx import Document
 from io import BytesIO
 
@@ -113,7 +113,7 @@ if st.button('Formular proyecto'):
     with st.spinner('Formulando...'):
     # Create the prompt
         prompt_1 = f'''Role: You are an AI assistant trained in the formulation of creative and cultural economy projects using the logical framework methodology. 
-                    Your answers should always be in Spanish. Always write the number of the task before you answer. 
+                    Your answers should always be only in Spanish. Always write the number of the task before you answer. 
                     For example: 
                     Task 7: ...
                     Task 8: ...
@@ -173,8 +173,17 @@ if st.button('Formular proyecto'):
         info_proyecto = create_text(prompt_2)
         #extracted_info_proyecto = info_proyecto
 
+        # Extract the tasks
+
+        # Extract Task 7
+        task_7 = re.search(r"Task 7:(.*?)(Task 8:|$)", marco_logico, re.DOTALL).group(1).strip()
+
+        # Extract Task 8
+        task_8 = re.search(r"Task 8:(.*?)(Task 9:|$)", marco_logico, re.DOTALL).group(1).strip()
+
         # Print the result
         st.write(marco_logico)
         st.write(info_proyecto)
-
+        st.write(task_7)
+        st.write(task_8)
        
