@@ -132,6 +132,7 @@ if st.button('Formular proyecto'):
                     Task 6: The project is aligned with the following axis of the call {eje_proyecto}.Do not write anything after performing this task.
                     
                     Task 7: Write the detailed logical framework matrix as a plain text document for the project called {nombre_proyecto} that will benefit the population of {beneficiarios_proyectos}. The answer should have the following format: 
+                            Task 7: 
                             1. The project's goal, purpose and outputs.
                             2. The key assumptions and risks that could influence the project's success.
                             3. The objectively verifiable indicators used to measure achievement of the goal, purpose and outputs.
@@ -166,6 +167,8 @@ if st.button('Formular proyecto'):
                     Task 6: Write a description of the beneficiaries of the project.
 
                     Task 7: Read {text_derechosculturales} choose one of the rights according to the task 7. Write the right you choose and the explanation of how the project is related with this right and how it have a positive benefit.
+                    
+                    Task 8: Write "Tekelala".
                     '''             
                     
 
