@@ -112,7 +112,7 @@ inversion_proyecto = st.number_input('Inversión del Proyecto', min_value=0.0, f
 if st.button('Formular proyecto'):
     with st.spinner('Formulando...'):
     # Create the prompt
-        prompt_ml = f'''Role: You are an AI assistant trained in the formulation of creative and cultural economy projects using the logical framework methodology. 
+        prompt_1 = f'''Role: You are an AI assistant trained in the formulation of creative and cultural economy projects using the logical framework methodology. 
                     Your answers should always be in Spanish. Always write the number of the task before you answer. 
                     For example: 
                     Task 7: ...
@@ -134,23 +134,39 @@ if st.button('Formular proyecto'):
                     Task 7: Write the detailed logical framework matrix as a plain text document for the project called {nombre_proyecto} that will benefit the population of {beneficiarios_proyectos}. 
                     
                     Task 8: Read {text_derechosculturales} choose one of the rights according to the task 7. Write the right you choose and the explanation of how the project is related with this right and how it have a positive benefit.
+                    '''
+        
+        # Call the function for the first batch of tasks and extract the answers
+        marco_logico = create_text(prompt_1)
+        # extracted_marco_logico = marco_logico
+        
+        prompt_2 = f'''Role: You are an AI assistant trained in the formulation of creative and cultural economy projects using the logical framework methodology. 
+                    Your answers should always be in Spanish. Always write the number of the task before you answer. 
+                    For example: 
+                    Task 7: ...
+                    Task 8: ...
+                    Do the following taks:
+
+                    Task 1: Read and analyze the followinw logical framework matrix {marco_logico}. Do not write anything after performing this task.
                     
-                    Task 9: write a paragraph describing the antecedents and justification of the project
+                    Task 2: Write a paragraph describing the antecedents and justification of the project
                     
                     Task 10: Write a list of the cross functional activities of the project
                     
                     Task 11: Write a detailed description of the project and its impact in less than 2000 characters.
                     
-                    Task 12: Estimate how many people will be employed in the project taking into account the budget and objectives. And create a table with 2 columns: Column 1 Number of People, Column 2 Profile of the person
+                    Task 12: Estimate how many people will be employed in the project taking into account the budget and objectives. And create a table with 2 columns: Column 1 Number of People and Column 2 Profile of the person.
                     
-                    Task 13: Write a description of the beneficiaries of the project \n\nHuman:
+                    Task 13: Write a description of the beneficiaries of the project.
                     '''               
                     
 
-        # Call the function
-        marco_logico = create_text(prompt_ml)
+        # Call the function for the second batch of tasks and extract the answers
+        info_proyecto = create_text(prompt_2)
+        #extracted_info_proyecto = info_proyecto
 
         # Print the result
+        st.write(info_proyecto)
         st.write(marco_logico)
 
        
