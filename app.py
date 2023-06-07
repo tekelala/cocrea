@@ -176,10 +176,11 @@ if st.button('Formular proyecto'):
         # Extract the tasks
 
         # Extract Task 7
-        task_7 = re.search(r"Task 7:(.*?)(Task 8:|$)", marco_logico, re.DOTALL).group(1).strip()
+        task_7 = re.search(r"Task 7:(.*?)(Task 8:|$)", marco_logico["completion"], re.DOTALL).group(1).strip()
 
         # Extract Task 8
-        task_8 = re.search(r"Task 8:(.*?)(Task 9:|$)", marco_logico, re.DOTALL).group(1).strip()
+        task_8 = re.search(r"Task 8:(.*?)(Task 9:|$)", marco_logico["completion"], re.DOTALL).group(1).strip()
+
 
         # Print the result
         st.write(marco_logico)
