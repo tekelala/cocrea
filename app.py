@@ -174,8 +174,24 @@ if st.button('Formular proyecto'):
         #extracted_info_proyecto = info_proyecto
 
         # Extract the tasks
-        task_7 = re.search(r"Task 7:(.*?)(Task 8:|$)", marco_logico["completion"], re.DOTALL).group(1).strip()
-        task_8 = re.search(r"Task 8:(.*?)(Task 9:|$)", marco_logico["completion"], re.DOTALL).group(1).strip()
+        match = re.search(r"Task 7:(.*?)(Task 8:|$)", marco_logico["completion"], re.DOTALL)
+        if match is not None:
+            task_7 = match.group(1).strip()
+        else:
+            task_7 = "Task 7 not found in text"
+
+        match = re.search(r"Task 8:(.*?)(Task 9:|$)", marco_logico["completion"], re.DOTALL)
+        if match is not None:
+            task_8 = match.group(1).strip()
+        else:
+            task_8 = "Task 8 not found in text"
+
+        match = re.search(r"Task 1:(.*?)(Task 2:|$)", info_proyecto["completion"], re.DOTALL)
+        if match is not None:
+            task_1 = match.group(1).strip()
+        else:
+            task_1 = "Task 8 not found in text"
+
 
 
         # Print the result
@@ -183,4 +199,5 @@ if st.button('Formular proyecto'):
         st.write(info_proyecto)
         st.write(task_7)
         st.write(task_8)
+        st.write(task_1)
        
