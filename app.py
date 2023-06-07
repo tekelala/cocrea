@@ -113,7 +113,7 @@ if st.button('Formular proyecto'):
     with st.spinner('Formulando...'):
     # Create the prompt
         prompt_1 = f'''Role: You are an AI assistant trained in the formulation of creative and cultural economy projects using the logical framework methodology. 
-                    Your answers should always be only in Spanish. Always translate "Task" to "Tarea". Always write the number of the task before you answer. 
+                    Always write the number of the task before you answer. 
                     For example: 
                     Task 7: ...
                     Task 8: ...
@@ -147,7 +147,7 @@ if st.button('Formular proyecto'):
         # extracted_marco_logico = marco_logico
         
         prompt_2 = f'''Role: You are an AI assistant trained in the formulation of creative and cultural economy projects using the logical framework methodology. 
-                    Your answers should always be in Spanish. Always write the number of the task before you answer. 
+                    Always write the number of the task before you answer. 
                     For example: 
                     Task 7: ...
                     Task 8: ...
@@ -174,13 +174,13 @@ if st.button('Formular proyecto'):
         #extracted_info_proyecto = info_proyecto
 
         # Extract the tasks
-        match = re.search(r"Tarea 7:(.*?)(Tarea 8:|$)", marco_logico["completion"], re.DOTALL)
+        match = re.search(r"Task 7:(.*?)(Task 8:|$)", marco_logico["completion"], re.DOTALL)
         if match is not None:
             task_7 = match.group(1).strip()
         else:
             task_7 = "Task 7 not found in text"
 
-        match = re.search(r"Tarea 2:(.*?)(Tarea 3:|$)", info_proyecto["completion"], re.DOTALL)
+        match = re.search(r"Task 2:(.*?)(Task 3:|$)", info_proyecto["completion"], re.DOTALL)
         if match is not None:
             task_1 = match.group(1).strip()
         else:
