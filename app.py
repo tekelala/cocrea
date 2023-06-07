@@ -220,8 +220,8 @@ if st.button('Formular proyecto'):
             task_6 = "Task 6 not found in text"
 
         # Print the result
-        st.write(marco_logico)
-        st.write(info_proyecto)
+        #st.write(marco_logico)
+        #st.write(info_proyecto)
         st.write(task_7)
         st.write(task_1)
         st.write(task_2)
@@ -229,5 +229,4 @@ if st.button('Formular proyecto'):
         st.write(task_4)
         st.write(task_5)
         st.write(task_6)
-        st.write(task_7)
        
