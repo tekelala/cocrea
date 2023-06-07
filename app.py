@@ -32,7 +32,7 @@ def create_text(prompt):
         "prompt": conversation,
         "model": "claude-v1.3-100k",
         "max_tokens_to_sample": 10000,
-        "temperature": 0.0,
+        "temperature": 0.6,
         "stop_sequences": ["\n\nHuman:"]
     }
 
@@ -174,11 +174,7 @@ if st.button('Formular proyecto'):
         #extracted_info_proyecto = info_proyecto
 
         # Extract the tasks
-
-        # Extract Task 7
         task_7 = re.search(r"Task 7:(.*?)(Task 8:|$)", marco_logico["completion"], re.DOTALL).group(1).strip()
-
-        # Extract Task 8
         task_8 = re.search(r"Task 8:(.*?)(Task 9:|$)", marco_logico["completion"], re.DOTALL).group(1).strip()
 
 
