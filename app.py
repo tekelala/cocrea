@@ -131,8 +131,16 @@ if st.button('Formular proyecto'):
                     
                     Task 6: The project is aligned with the following axis of the call {eje_proyecto}.Do not write anything after performing this task.
                     
-                    Task 7: Write the detailed logical framework matrix as a plain text document for the project called {nombre_proyecto} that will benefit the population of {beneficiarios_proyectos}. 
-                    
+                    Task 7: Write the detailed logical framework matrix as a plain text document for the project called {nombre_proyecto} that will benefit the population of {beneficiarios_proyectos}. The answer should have the following format: 
+                            1. The project's goal, purpose and outputs.
+                            2. The key assumptions and risks that could influence the project's success.
+                            3. The objectively verifiable indicators used to measure achievement of the goal, purpose and outputs.
+                            4. The means of verification for monitoring and evaluating the indicators.
+                            5. Narrative summary: Describes the project's goal, purpose, outputs and activities.
+                            6. Indicators: Specifies the measures to assess whether the objective of each level of the project hierarchy is achieved.
+                            7. Means of verification: Specifies how and from where data on the indicators will be obtained.
+                            8. Assumptions: Lists key assumptions which must hold true for the project to succeed but are outside its control.
+
                     Task 8: Read {text_derechosculturales} choose one of the rights according to the task 7. Write the right you choose and the explanation of how the project is related with this right and how it have a positive benefit.
                     '''
         
