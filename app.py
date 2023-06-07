@@ -140,8 +140,6 @@ if st.button('Formular proyecto'):
                             6. Indicators: Specifies the measures to assess whether the objective of each level of the project hierarchy is achieved.
                             7. Means of verification: Specifies how and from where data on the indicators will be obtained.
                             8. Assumptions: Lists key assumptions which must hold true for the project to succeed but are outside its control.
-
-                    Task 8: Read {text_derechosculturales} choose one of the rights according to the task 7. Write the right you choose and the explanation of how the project is related with this right and how it have a positive benefit.
                     '''
         
         # Call the function for the first batch of tasks and extract the answers
@@ -166,7 +164,9 @@ if st.button('Formular proyecto'):
                     Task 5: Estimate how many people will be employed in the project taking into account the budget and objectives. And create a table with 2 columns: Column 1 Number of People and Column 2 Profile of the person.
                     
                     Task 6: Write a description of the beneficiaries of the project.
-                    '''               
+
+                    Task 7: Read {text_derechosculturales} choose one of the rights according to the task 7. Write the right you choose and the explanation of how the project is related with this right and how it have a positive benefit.
+                    '''             
                     
 
         # Call the function for the second batch of tasks and extract the answers
@@ -180,24 +180,51 @@ if st.button('Formular proyecto'):
         else:
             task_7 = "Task 7 not found in text"
 
-        match = re.search(r"Task 8:(.*?)(Task 9:|$)", marco_logico["completion"], re.DOTALL)
-        if match is not None:
-            task_8 = match.group(1).strip()
-        else:
-            task_8 = "Task 8 not found in text"
-
-        match = re.search(r"Task 1:(.*?)(Task 2:|$)", info_proyecto["completion"], re.DOTALL)
+        match = re.search(r"Task 2:(.*?)(Task 3:|$)", info_proyecto["completion"], re.DOTALL)
         if match is not None:
             task_1 = match.group(1).strip()
         else:
-            task_1 = "Task 8 not found in text"
+            task_1 = "Task 1 not found in text"
 
+        match = re.search(r"Task 3:(.*?)(Task 4:|$)", info_proyecto["completion"], re.DOTALL)
+        if match is not None:
+            task_2 = match.group(1).strip()
+        else:
+            task_2 = "Task 2 not found in text"
 
+        match = re.search(r"Task 4:(.*?)(Task 5:|$)", info_proyecto["completion"], re.DOTALL)
+        if match is not None:
+            task_3 = match.group(1).strip()
+        else:
+            task_3 = "Task 3 not found in text"
+
+        match = re.search(r"Task 5:(.*?)(Task 6:|$)", info_proyecto["completion"], re.DOTALL)
+        if match is not None:
+            task_4 = match.group(1).strip()
+        else:
+            task_4 = "Task 4 not found in text"
+
+        match = re.search(r"Task 6:(.*?)(Task 7:|$)", info_proyecto["completion"], re.DOTALL)
+        if match is not None:
+            task_5 = match.group(1).strip()
+        else:
+            task_5 = "Task 5 not found in text"
+
+        match = re.search(r"Task 7:(.*?)(Task 8:|$)", info_proyecto["completion"], re.DOTALL)
+        if match is not None:
+            task_6 = match.group(1).strip()
+        else:
+            task_4 = "Task 6 not found in text"
 
         # Print the result
         st.write(marco_logico)
         st.write(info_proyecto)
         st.write(task_7)
-        st.write(task_8)
         st.write(task_1)
+        st.write(task_2)
+        st.write(task_3)
+        st.write(task_4)
+        st.write(task_5)
+        st.write(task_6)
+        st.write(task_7)
        
