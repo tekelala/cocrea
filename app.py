@@ -232,10 +232,10 @@ if st.button('Formular proyecto'):
         st.write(task_2)
         st.header("Descripción detallada e impacto del proyecto")
         st.write(task_3)
-        st.header("Descripción detallada e impacto del proyecto")
-        st.write(task_4)
         st.header("Número de personas que trabajarán en el proyecto y sus cargos")
-        st.write(task_5)
+        st.write(task_4)
         st.header("Breve descripción de los beneficiarios")
+        st.write(task_5)
+        st.header("Explicación de cómo contribuye el proyecto al elemento o condición del derecho cultural que se seleccionó")
         st.write(task_6)
        
