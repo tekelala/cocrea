@@ -224,11 +224,18 @@ if st.button('Formular proyecto'):
         # Print the result
         #st.write(marco_logico)
         #st.write(info_proyecto)
+        st.header("Proyecto estructurado con metodologia Marco Lógico")
         st.write(task_7)
+        st.header("Antecedentes y justificación del proyecto")
         st.write(task_1)
+        st.header("Actividades transversales del proyecto:")
         st.write(task_2)
+        st.header("Descripción detallada e impacto del proyecto")
         st.write(task_3)
+        st.header("Descripción detallada e impacto del proyecto")
         st.write(task_4)
+        st.header("Número de personas que trabajarán en el proyecto y sus cargos")
         st.write(task_5)
+        st.header("Breve descripción de los beneficiarios")
         st.write(task_6)
        
