@@ -32,7 +32,7 @@ def create_text(prompt):
         "prompt": conversation,
         "model": "claude-v1.3-100k",
         "max_tokens_to_sample": 10000,
-        "temperature": 0.6,
+        "temperature": 0.0,
         "stop_sequences": ["\n\nHuman:"]
     }
 
