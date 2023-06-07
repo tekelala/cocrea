@@ -4,6 +4,8 @@ import json
 import re
 from docx import Document
 from io import BytesIO
+import pandas as pd
+
 
 
 # Function to read .txt file
@@ -226,7 +228,11 @@ if st.button('Formular proyecto'):
         st.write(task_1)
         st.write(task_2)
         st.write(task_3)
-        st.write(task_4)
+        table_data = [line.split(',') for line in task_4.split('\n') if line]
+        df = pd.DataFrame(table_data, columns=['Number of People', 'Profile of the person'])
+
+        st.dataframe(df)
+        
         st.write(task_5)
         st.write(task_6)
        
