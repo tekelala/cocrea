@@ -151,13 +151,13 @@ if st.button('Formular proyecto'):
                     
                     Task 2: Write a paragraph describing the antecedents and justification of the project
                     
-                    Task 10: Write a list of the cross functional activities of the project
+                    Task 3: Write a list of the cross functional activities of the project
                     
-                    Task 11: Write a detailed description of the project and its impact in less than 2000 characters.
+                    Task 4: Write a detailed description of the project and its impact in less than 2000 characters.
                     
-                    Task 12: Estimate how many people will be employed in the project taking into account the budget and objectives. And create a table with 2 columns: Column 1 Number of People and Column 2 Profile of the person.
+                    Task 5: Estimate how many people will be employed in the project taking into account the budget and objectives. And create a table with 2 columns: Column 1 Number of People and Column 2 Profile of the person.
                     
-                    Task 13: Write a description of the beneficiaries of the project.
+                    Task 6: Write a description of the beneficiaries of the project.
                     '''               
                     
 
@@ -166,7 +166,7 @@ if st.button('Formular proyecto'):
         #extracted_info_proyecto = info_proyecto
 
         # Print the result
-        st.write(info_proyecto)
         st.write(marco_logico)
+        st.write(info_proyecto)
 
        
