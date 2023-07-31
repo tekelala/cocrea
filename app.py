@@ -32,7 +32,7 @@ def create_text(prompt):
     # Define the body of the request
     body = {
         "prompt": conversation,
-        "model": "claude-v2.0",
+        "model": "claude-2.0",
         "max_tokens_to_sample": 10000,
         "temperature": 0.6,
         "stop_sequences": ["\n\nHuman:"]
