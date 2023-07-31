@@ -178,6 +178,8 @@ if st.button('Formular proyecto'):
         info_proyecto = create_text(prompt_2)
         #extracted_info_proyecto = info_proyecto
 
+        st.write(info_proyecto)
+
         # Extract the tasks
         match = re.search(r"Task 7:(.*?)(Task 8:|$)", marco_logico["completion"], re.DOTALL)
         if match is not None:
