@@ -26,7 +26,7 @@ def create_text(prompt):
     }
 
     # Prepare the prompt for Claude
-    conversation = f"Human: {prompt}
+    conversation = f"Human: {prompt}\n\nAssistant:"
 
 Assistant:"
 
