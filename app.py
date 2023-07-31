@@ -170,7 +170,7 @@ inversion_proyecto = st.number_input('Inversión del Proyecto', min_value=0.0, f
 st.session_state.inversion_proyecto = inversion_proyecto
 
 # Button to formulate project
-if st.button('Formular proyecto'):
+if st.button('Formular proyecto', key='formular'):
     with st.spinner('Formulando...'):
         # Create the prompt
         prompt_1 = create_prompt_1(st.session_state)
@@ -260,7 +260,7 @@ def display_results(tasks_info_proyecto, tasks_marco_logico):
     st.header("Proyecto estructurado")
 
 # Button to formulate project
-if st.button('Formular proyecto'):
+if st.button('Formular proyecto', key='formular2'):
     with st.spinner('Formulando...'):
         # Create the prompt
         prompt_1 = create_prompt_1(st.session_state)
