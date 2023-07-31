@@ -259,20 +259,6 @@ def extract_tasks(response):
 def display_results(tasks_info_proyecto, tasks_marco_logico):
     st.header("Proyecto estructurado")
 
-# Button to formulate project
-if st.button('Formular proyecto', key='formular2'):
-    with st.spinner('Formulando...'):
-        # Create the prompt
-        prompt_1 = create_prompt_1(st.session_state)
-        marco_logico = create_text(prompt_1)
-
-        prompt_2 = create_prompt_2(marco_logico, st.session_state)
-        info_proyecto = create_text(prompt_2)
-
-        tasks_info_proyecto = extract_tasks(info_proyecto)
-        tasks_marco_logico = extract_tasks(marco_logico)
-
-        display_results(tasks_info_proyecto, tasks_marco_logico)
 
 # Define functions to create prompts
 def create_prompt_1(session_state):
