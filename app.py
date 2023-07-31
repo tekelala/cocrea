@@ -257,7 +257,7 @@ def extract_tasks(response):
     return tasks
 
 def display_results(tasks_info_proyecto, tasks_marco_logico):
-    st.header("Proyecto estructurado
+    st.header("Proyecto estructurado")
 
 # Button to formulate project
 if st.button('Formular proyecto'):
