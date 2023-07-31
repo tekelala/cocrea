@@ -114,7 +114,7 @@ inversion_proyecto = st.number_input('Inversión del Proyecto', min_value=0.0, f
 if st.button('Formular proyecto'):
     with st.spinner('Formulando...'):
     # Create the prompt
-        prompt_1 = f'''Role: You are an AI assistant trained in the formulation of creative and cultural economy projects using the logical framework methodology. 
+        prompt_1 = f'''Role: You are an AI assistant trained in the formulation of creative and cultural economy projects using the logical framework methodology. Give your answers in Spanish.
                     Always write the number of the task before you answer. 
                     For example: 
                     Task 7: ...
@@ -149,7 +149,7 @@ if st.button('Formular proyecto'):
         marco_logico = create_text(prompt_1)
         # extracted_marco_logico = marco_logico
         
-        prompt_2 = f'''Role: You are an AI assistant trained in the formulation of creative and cultural economy projects using the logical framework methodology. 
+        prompt_2 = f'''Role: You are an AI assistant trained in the formulation of creative and cultural economy projects using the logical framework methodology. Give your answers in Spanish.
                     Always write the number of the task before you answer. 
                     For example: 
                     Task 7: ...
@@ -177,8 +177,6 @@ if st.button('Formular proyecto'):
         # Call the function for the second batch of tasks and extract the answers
         info_proyecto = create_text(prompt_2)
         #extracted_info_proyecto = info_proyecto
-
-        st.write(info_proyecto)
 
         # Extract the tasks
         match = re.search(r"Task 7:(.*?)(Task 8:|$)", marco_logico["completion"], re.DOTALL)
