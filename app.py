@@ -28,8 +28,6 @@ def create_text(prompt):
     # Prepare the prompt for Claude
     conversation = f"Human: {prompt}\n\nAssistant:"
 
-Assistant:"
-
     # Define the body of the request
     body = {
         "prompt": conversation,
