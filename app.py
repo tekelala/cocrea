@@ -7,6 +7,9 @@ from io import BytesIO
 import pandas as pd
 
 
+# Initialize session state variables
+if "result" not in st.session_state:
+    st.session_state.result = ""
 
 # Function to read .txt file
 def read_txt_file(file_path):
@@ -250,8 +253,6 @@ if st.button('Formular proyecto'):
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = ""
 
-    # Creativity level
-    creativity_level = st.number_input('Creativity level', min_value=0.0, max_value=1.0, step=0.1, value=0.7, format="%.1f")
 
     # Display the chat history
     st.write(st.session_state.chat_history)
@@ -266,7 +267,7 @@ if st.button('Formular proyecto'):
                 # Append user input to chat history
                 st.session_state.chat_history += f"Human: {user_input}\n\n"
                 # Generate Claude's response
-                response = create_text(st.session_state.chat_history + "Assistant:", creativity_level)
+                response = create_text(st.session_state.chat_history + "Assistant:")
                 # Append Claude's response to chat history
                 st.session_state.chat_history += f"Assistant: {response}\n\n"
                 # Rerun the script to update the chat history display
