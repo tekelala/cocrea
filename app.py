@@ -239,3 +239,9 @@ if st.button('Formular proyecto'):
         st.header("Explicación de cómo contribuye el proyecto al elemento o condición del derecho cultural que se seleccionó")
         st.write(task_6)
        
+
+    st.header('Chat')
+    st.write('Vamos a trabajar sobre el proyecto formulado')
+
+    proyecto_formulado = 'Proyecto estructurado con metodologia Marco Lógico' + '\n' + task_7 + '\n' + 'Antecedentes y justificación del proyecto: ' + task_1 + '\n' + 'Actividades transversales del proyecto: ' + task_2 + '\n' + 'Descripción detallada e impacto del proyecto: ' + task_3 + '\n' + 'Número de personas que trabajarán en el proyecto y sus cargos: ' + task_4 + '\n' + 'Breve descripción de los beneficiarios: ' + task_5 + '\n' + 'Explicación de cómo contribuye el proyecto al elemento o condición del derecho cultural que se seleccionó: ' + task_6
+    st.write(proyecto_formulado)
