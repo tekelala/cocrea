@@ -11,6 +11,15 @@ import pandas as pd
 if "result" not in st.session_state:
     st.session_state.result = ""
 
+# Initialize the variables
+task_7 = ""
+task_1 = ""
+task_2 = ""
+task_3 = ""
+task_4 = ""
+task_5 = ""
+task_6 = ""
+
 # Function to read .txt file
 def read_txt_file(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
