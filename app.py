@@ -7,19 +7,6 @@ from io import BytesIO
 import pandas as pd
 
 
-# Initialize session state variables
-if "result" not in st.session_state:
-    st.session_state.result = ""
-
-# Initialize the variables
-task_7 = ""
-task_1 = ""
-task_2 = ""
-task_3 = ""
-task_4 = ""
-task_5 = ""
-task_6 = ""
-proyecto_formulado = ""
 
 # Function to read .txt file
 def read_txt_file(file_path):
@@ -252,33 +239,3 @@ if st.button('Formular proyecto'):
         st.header("Explicación de cómo contribuye el proyecto al elemento o condición del derecho cultural que se seleccionó")
         st.write(task_6)
        
-
-    st.header('Chat')
-    st.write('Vamos a trabajar sobre el proyecto formulado')
-
-    proyecto_formulado = 'Proyecto estructurado con metodologia Marco Lógico' + '\n' + task_7 + '\n' + 'Antecedentes y justificación del proyecto: ' + task_1 + '\n' + 'Actividades transversales del proyecto: ' + task_2 + '\n' + 'Descripción detallada e impacto del proyecto: ' + task_3 + '\n' + 'Número de personas que trabajarán en el proyecto y sus cargos: ' + task_4 + '\n' + 'Breve descripción de los beneficiarios: ' + task_5 + '\n' + 'Explicación de cómo contribuye el proyecto al elemento o condición del derecho cultural que se seleccionó: ' + task_6
-    #st.write(proyecto_formulado)
-
-# Initialize session state variables if not already done
-if "chat_history" not in st.session_state:
-    st.session_state.chat_history = ""
-
-
-# Display the chat history
-st.write(st.session_state.chat_history)
-
-# User input field and 'Send' button
-with st.form(key='chat_form'):
-    user_input = st.text_input('Escribe tu mensaje:') + proyecto_formulado
-    submit_button = st.form_submit_button('Enviar')
-
-    if submit_button and user_input:
-        with st.spinner('Chatting...'):
-            # Append user input to chat history
-            st.session_state.chat_history += f"Human: {user_input}\n\n"
-            # Generate Claude's response
-            response = create_text(st.session_state.chat_history + "Assistant:")
-            # Append Claude's response to chat history
-            st.session_state.chat_history += f"Assistant: {response}\n\n"
-            # Rerun the script to update the chat history display
-            st.experimental_rerun()
