@@ -244,4 +244,30 @@ if st.button('Formular proyecto'):
     st.write('Vamos a trabajar sobre el proyecto formulado')
 
     proyecto_formulado = 'Proyecto estructurado con metodologia Marco Lógico' + '\n' + task_7 + '\n' + 'Antecedentes y justificación del proyecto: ' + task_1 + '\n' + 'Actividades transversales del proyecto: ' + task_2 + '\n' + 'Descripción detallada e impacto del proyecto: ' + task_3 + '\n' + 'Número de personas que trabajarán en el proyecto y sus cargos: ' + task_4 + '\n' + 'Breve descripción de los beneficiarios: ' + task_5 + '\n' + 'Explicación de cómo contribuye el proyecto al elemento o condición del derecho cultural que se seleccionó: ' + task_6
-    st.write(proyecto_formulado)
+    #st.write(proyecto_formulado)
+
+       # Initialize session state variables if not already done
+    if "chat_history" not in st.session_state:
+        st.session_state.chat_history = ""
+
+    # Creativity level
+    creativity_level = st.number_input('Creativity level', min_value=0.0, max_value=1.0, step=0.1, value=0.7, format="%.1f")
+
+    # Display the chat history
+    st.write(st.session_state.chat_history)
+
+    # User input field and 'Send' button
+    with st.form(key='chat_form'):
+        user_input = st.text_input('Escribe tu mensaje:') + proyecto_formulado
+        submit_button = st.form_submit_button('Enviar')
+
+        if submit_button and user_input:
+            with st.spinner('Chatting...'):
+                # Append user input to chat history
+                st.session_state.chat_history += f"Human: {user_input}\n\n"
+                # Generate Claude's response
+                response = create_text(st.session_state.chat_history + "Assistant:", creativity_level)
+                # Append Claude's response to chat history
+                st.session_state.chat_history += f"Assistant: {response}\n\n"
+                # Rerun the script to update the chat history display
+                st.experimental_rerun()
