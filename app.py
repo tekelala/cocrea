@@ -19,6 +19,7 @@ task_3 = ""
 task_4 = ""
 task_5 = ""
 task_6 = ""
+proyecto_formulado = ""
 
 # Function to read .txt file
 def read_txt_file(file_path):
